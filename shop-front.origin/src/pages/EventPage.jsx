@@ -12,7 +12,7 @@ import saleProduct9 from "../assets/images/products/saleproducts9.webp";
 import saleProduct10 from "../assets/images/products/saleproducts10.webp";
 import saleProduct11 from "../assets/images/products/saleproducts11.webp";
 import saleProduct12 from "../assets/images/products/saleproducts12.webp";
-import couponImage from "../assets/images/products/네고왕.webp";
+import couponImage from "../assets/images/products/negowang.webp";
 const EventPage = () => {
   const saleimges = [
     [saleProduct1, 70],
