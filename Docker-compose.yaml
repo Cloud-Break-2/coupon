@@ -34,11 +34,11 @@ services:
       start_period: 30s
 
   coupon-api:
-    image: cloudbreak6th/coupon-api:latest
-    # image: coupon-api
-    # build:
-    #   context: ./coupon-api
-    #   dockerfile: Dockerfile
+#    image: cloudbreak6th/coupon-api:latest
+    image: coupon-api
+    build:
+      context: ./coupon-api
+      dockerfile: Dockerfile
     container_name: coupon-api
     networks:
       - coupon-network
@@ -73,7 +73,7 @@ services:
       - coupon-network
     ports:
       - "80:80"
-    environment:
+#    environment:
 #       - REACT_APP_API_URL=http://shop-back:8082
 #       - REACT_APP_COUPON_API_URL=http://coupon-api:8080
     depends_on:
