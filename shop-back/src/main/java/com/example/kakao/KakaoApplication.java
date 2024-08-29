@@ -23,7 +23,7 @@ public class KakaoApplication {
 		SpringApplication.run(KakaoApplication.class, args);
 	}
 
-	@Profile("local")
+	@Profile("local") // 확인
 	@Bean
 	CommandLineRunner localServerStart(UserJPARepository userJPARepository, ProductJPARepository productJPARepository, OptionJPARepository optionJPARepository, PasswordEncoder passwordEncoder){
 		return args -> {
@@ -100,7 +100,7 @@ public class KakaoApplication {
 
 	private User newUser(String username, PasswordEncoder passwordEncoder){
 		return User.builder()
-				.email(username+"@nate.com")
+				.email(username+"@mail.com")
 				.password(passwordEncoder.encode("meta1234!"))
 				.username(username)
 				.roles(username.equals("admin") ? "ROLE_ADMIN" : "ROLE_USER")

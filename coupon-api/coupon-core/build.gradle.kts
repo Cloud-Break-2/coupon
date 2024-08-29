@@ -15,6 +15,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
+//build.gradle 파일에서 테스트 작업을 비활성화
 tasks.withType<Test> {
-    useJUnitPlatform()
+    enabled = false
 }

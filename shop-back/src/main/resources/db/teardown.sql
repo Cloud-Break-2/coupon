@@ -9,6 +9,7 @@ truncate table item_tb;
 SET REFERENTIAL_INTEGRITY TRUE;
 -- 모든 제약 조건 활성화
 
+use `coupon`;
 INSERT INTO user_tb (`id`,`email`,`password`,`username`, `roles`) VALUES ('1', 'ssarmango@nate.com', '{bcrypt}$2a$10$8H0OT8wgtALJkig6fmypi.Y7jzI5Y7W9PGgRKqnVeS2cLWGifwHF2', 'ssarmango', 'ROLE_USER');
 INSERT INTO user_tb (`id`,`email`,`password`,`username`, `roles`) VALUES ('2', 'ssar@nate.com', '{bcrypt}$2a$10$8H0OT8wgtALJkig6fmypi.Y7jzI5Y7W9PGgRKqnVeS2cLWGifwHF2', 'ssar', 'ROLE_USER');
 

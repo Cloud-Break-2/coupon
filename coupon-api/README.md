@@ -1,45 +1,55 @@
+1.application-docker.yml 확인
+2. 도커파일 확인
+3. 도커 컴포즈 실행 및 동작 확인
+4. 이미지 빌드 및 푸시
+---------------------------
 # 수정 사항
-- coupon-XXX/src/main/resources/application-docker.yml 수정: mysql, redis 주소 변경
+- mysql, redis 주소 변경 coupon-XXX/src/main/resources/application-docker.yml 수정: 
 
 # 소스코드 빌드 
 - mysql, redis 먼저 실행 및 연결이 되어야 빌드가 가능하다.
-./gradlew build -x test 
-cd ~/coupon-api/coupon-api/build/libs
-java -jar -Dspring.profiles.active=docker coupon-api.jar
+- test task를 제외하고 빌드한다. 
+```
+./gradlew build -x test
+```
 
-
-확인: ./coupon-api/build/libs/coupon-api.jar 생성확인 
+- coupon-api(main) jar 파일 생성 확인 
+```
+cd ./build/libs
+./coupon-api/build/libs/coupon-api.jar
+```
 
 # 도커컴포즈 실행 및 확인
+- 도커 컨테이너 실행
+```
 docker-compose up -d
+```
 
-# 확인
 방법1. curl <url>:8080/hello ✅ 
 방법2. 도커 내부로 들어가서 디비, 레디스 잘 있는지 확인 ✅
-도커 내부로 들어가기 
+- 도커 내부로 들어가기 
 ```
 > docker exec -it coupon-api /bin/bash
 ```
 
-mysql 확인 : 
+- mysql 확인 :
 ```
 > mysql -h coupon-mysql -P 3306 -u abcd -p
 > show databases;
 > use coupon;
 > show tables;
-> select * from 테이블명;
+> select * from coupon_issues;
+> select * from coupons;
 ```
 
-redis 확인 :
+- redis 확인 :
 ```
 > redis-cli -h coupon-redis -p 6379 
 > ping
 PONG 
 ```
 
-방법3. 포스트맨으로 post 보내보기 ✅ 
-
---------기타 참고
+방법3. 포스트맨으로 post 보내보기 ✅
 
 
 # 컨테이너 이미지 빌드

@@ -12,7 +12,8 @@ export const instance = axios.create({
   // 꼭 timeout 세팅을 해줘야 한다. 무한정 요청을 기다릴 수 없기 때문
   timeout: 1000 * 10,
   headers: {
-    "Content-Type" : "application/json"
+    "Content-Type" : "application/json",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
   }
 })
 

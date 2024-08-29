@@ -1,7 +1,6 @@
-use `kakao`;
-
-INSERT INTO user_tb (`id`,`email`,`password`,`username`, `roles`) VALUES ('1', 'admin@nate.com', '{bcrypt}$2a$10$XqKYFkLAkj5o3995.r1Js.pCZsifZx6Nxwi1lqHxJqhIxvte6ngBq', 'admin', 'ROLE_ADMIN');
-INSERT INTO user_tb (`id`,`email`,`password`,`username`, `roles`) VALUES ('2', 'ssar@nate.com', '{bcrypt}$2a$10$XqKYFkLAkj5o3995.r1Js.pCZsifZx6Nxwi1lqHxJqhIxvte6ngBq', 'ssar', 'ROLE_USER');
+use `coupon`;
+INSERT INTO user_tb (`id`,`email`,`password`,`username`, `roles`) VALUES ('1', 'ssarmango@nate.com', '{bcrypt}$2a$10$8H0OT8wgtALJkig6fmypi.Y7jzI5Y7W9PGgRKqnVeS2cLWGifwHF2', 'ssarmango', 'ROLE_USER');
+INSERT INTO user_tb (`id`,`email`,`password`,`username`, `roles`) VALUES ('2', 'ssar@nate.com', '{bcrypt}$2a$10$8H0OT8wgtALJkig6fmypi.Y7jzI5Y7W9PGgRKqnVeS2cLWGifwHF2', 'ssar', 'ROLE_USER');
 
 INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('1', '기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전', '', '/images/1.jpg', '1000');
 INSERT INTO product_tb (`id`,`product_name`,`description`,`image`, `price`) VALUES ('2', '[황금약단밤 골드]2022년산 햇밤 칼집밤700g외/군밤용/생율', '', '/images/2.jpg', '2000');
@@ -67,3 +66,13 @@ INSERT INTO option_tb (`id`,`product_id`,`option_name`,`price`) VALUES ('45', '1
 INSERT INTO option_tb (`id`,`product_id`,`option_name`,`price`) VALUES ('46', '14', '[특품] 샤인머스켓 2kg 2-3수', '23900');
 INSERT INTO option_tb (`id`,`product_id`,`option_name`,`price`) VALUES ('47', '15', '화이트', '148000');
 INSERT INTO option_tb (`id`,`product_id`,`option_name`,`price`) VALUES ('48', '15', '블랙', '148000');
+
+INSERT INTO cart_tb (`id`,`user_id`, `option_id`, `quantity`, `price`) VALUES ('1', '1', '1', '5', '50000');
+INSERT INTO cart_tb (`id`,`user_id`, `option_id`, `quantity`, `price`) VALUES ('2', '1', '2', '1', '10900');
+INSERT INTO cart_tb (`id`,`user_id`, `option_id`, `quantity`, `price`) VALUES ('3', '1', '16', '5', '250000');
+
+INSERT INTO order_tb (`id`,`user_id`) VALUES ('1', '1');
+
+INSERT INTO item_tb (`id`,`option_id`, `quantity`, `price`, `order_id`) VALUES ('1', '1', '5', '50000', '1');
+INSERT INTO item_tb (`id`,`option_id`, `quantity`, `price`, `order_id`) VALUES ('2', '2', '1', '10900', '1');
+INSERT INTO item_tb (`id`,`option_id`, `quantity`, `price`, `order_id`) VALUES ('3', '16', '5', '250000', '1');

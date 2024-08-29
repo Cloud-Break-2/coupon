@@ -6,16 +6,16 @@ services:
     networks:
       - coupon-network
     ports:
-      - "6379:6379"
+      - "6379"
     command: redis-server --port 6379
       
   coupon-mysql:
-    image: ubuntu/mysql:edge
+    image: ubuntu/mysql:edge  # 왜 해당 이미지 사용?
     container_name: coupon-mysql
     networks:
       - coupon-network
     ports:
-      - "3306:3306"
+      - "3306"
     environment:
       MYSQL_DATABASE: coupon
       MYSQL_USER: abcd
@@ -24,8 +24,8 @@ services:
       TZ: UTC
     volumes:
       - mysql-data:/var/lib/mysql
-      - mysql-init:/docker-entrypoint-initdb.d
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --explicit_defaults_for_timestamp=1
+    # 옵션명령어 확인
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
@@ -43,14 +43,14 @@ services:
     networks:
       - coupon-network
     ports:
-      - "8080:8080"
+      - "8080"
     depends_on:
       - coupon-mysql
       - coupon-redis
     restart: always
     environment:
         - SPRING_PROFILES_ACTIVE=docker
-        - SPRING_DATASOURCE_URL=jdbc:mysql://coupon-mysql:3306/coupon?useSSL=false&serverTimezone=UTC
+        - SPRING_DATASOURCE_URL=jdbc:mysql://coupon-mysql:3306/coupon
         - SPRING_DATASOURCE_USERNAME=abcd
         - SPRING_DATASOURCE_PASSWORD=1234
         - SPRING_DATA_REDIS_HOST=coupon-redis
@@ -65,10 +65,12 @@ services:
     networks:
       - coupon-network
     ports:
-      - "8082:8082"
+      - "8080"
     depends_on:
       coupon-mysql:
         condition: service_healthy
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
   shop-front:
     image: shop-front
@@ -80,11 +82,8 @@ services:
       - coupon-network
     ports:
       - "80:80"
-#    environment:
-#       - REACT_APP_API_URL=http://shop-back:8082
-#       - REACT_APP_COUPON_API_URL=http://coupon-api:8080
     depends_on:
-      - coupon-api
+      - shop-back
 
 networks:
   coupon-network:
