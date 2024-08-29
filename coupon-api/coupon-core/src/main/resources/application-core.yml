@@ -59,7 +59,7 @@ spring:
       password: PROD_PASSWORD
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
   data:
     redis:
       host: PROD_URL

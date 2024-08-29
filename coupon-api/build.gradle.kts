@@ -53,7 +53,6 @@ subprojects {
     }
 }
 
-// Task 관련된 부분 주석 처리
-//tasks.withType<Test> {
-//    useJUnitPlatform()
-//}
+tasks.withType<Test> {
+    useJUnitPlatform()
+}

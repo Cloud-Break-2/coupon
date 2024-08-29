@@ -1,10 +1,14 @@
 # 수정 사항
 - coupon-XXX/src/main/resources/application-api.yml 수정: mysql, redis 주소 변경
 
-# 소스코드 빌드 (test 버전 제외 하고 빌드)
-./gradlew clean build
+# 소스코드 빌드 
+- mysql, redis 먼저 실행 및 연결이 되어야 빌드가 가능하다.
+./gradlew build -x test 
 cd ~/coupon-api/coupon-api/build/libs
-java -jar -Dspring.profiles.active=local coupon-api.jar <- 이미지 빌드할때 해당 버전으로 해야하지 않을까? yes, local 
+java -jar -Dspring.profiles.active=local coupon-api.jar <- 이미지 빌드할때 해당 버전으로 해야하지 않을까? yes, local
+
+
+확인: ./coupon-api/build/libs/coupon-api.jar 생성확인 
 
 # 도커컴포즈 실행 및 확인
 docker-compose up -d

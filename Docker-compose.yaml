@@ -6,8 +6,8 @@ services:
     networks:
       - coupon-network
     ports:
-      - "6380:6380"
-    command: redis-server --port 6380
+      - "6379:6379"
+    command: redis-server --port 6379
       
   coupon-mysql:
     image: ubuntu/mysql:edge
@@ -48,6 +48,13 @@ services:
       - coupon-mysql
       - coupon-redis
     restart: always
+    environment:
+        - SPRING_PROFILES_ACTIVE=docker
+        - SPRING_DATASOURCE_URL=jdbc:mysql://coupon-mysql:3306/coupon?useSSL=false&serverTimezone=UTC
+        - SPRING_DATASOURCE_USERNAME=abcd
+        - SPRING_DATASOURCE_PASSWORD=1234
+        - SPRING_DATA_REDIS_HOST=coupon-redis
+        - SPRING_DATA_REDIS_PORT=6379
 
   shop-back:
     image: shop-back
