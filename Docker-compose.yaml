@@ -10,7 +10,7 @@ services:
     command: redis-server --port 6379
       
   coupon-mysql:
-    image: ubuntu/mysql:edge  # 왜 해당 이미지 사용?
+    image: mysql:8.0  # 왜 해당 이미지 사용?
     container_name: coupon-mysql
     networks:
       - coupon-network
@@ -34,11 +34,11 @@ services:
       start_period: 30s
 
   coupon-api:
-#    image: cloudbreak6th/coupon-api:latest
-    image: coupon-api
-    build:
-      context: ./coupon-api
-      dockerfile: Dockerfile
+    image: cloudbreak6th/coupon-api:v1.0
+#    image: coupon-api
+#    build:
+#      context: ./coupon-api
+#      dockerfile: Dockerfile
     container_name: coupon-api
     networks:
       - coupon-network
@@ -57,10 +57,11 @@ services:
         - SPRING_DATA_REDIS_PORT=6379
 
   shop-back:
-    image: shop-back
-    build:
-      context: ./shop-back
-      dockerfile: Dockerfile
+    image: cloudbreak6th/shop-back:v1.0
+#    image: shop-back
+#    build:
+#      context: ./shop-back
+#      dockerfile: Dockerfile
     container_name: shop-back
     networks:
       - coupon-network
@@ -73,10 +74,11 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
 
   shop-front:
-    image: shop-front
-    build:
-      context: ./shop-front
-      dockerfile: Dockerfile
+    image: cloudbreak6th/shop-front:v1.0
+#    image: shop-front
+#    build:
+#      context: ./shop-front
+#      dockerfile: Dockerfile
     container_name: shop-front
     networks:
       - coupon-network
