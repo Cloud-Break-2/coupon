@@ -4,6 +4,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/shop-back" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/shop-front" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/shop-front 22" vcs="Git" />
   </component>
 </project>

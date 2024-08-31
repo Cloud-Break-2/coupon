@@ -33,7 +33,7 @@ services:
       start_period: 30s
 
   coupon-api:
-    image: cloudbreak6th/coupon-api:v1.0
+    image: cloudbreak6th/coupon-api:v1.1
 #    image: coupon-api
 #    build:
 #      context: ./coupon-api

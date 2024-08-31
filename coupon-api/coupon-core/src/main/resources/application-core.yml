@@ -21,7 +21,7 @@ spring:
   data:
     redis:
       host: coupon-redis
-      port: 6380
+      port: 6379
 ---
 spring:
   config:
@@ -42,7 +42,7 @@ spring:
   data:
     redis:
       host: localhost
-      port: 6380
+      port: 6379
 ---
 spring:
   config:
@@ -63,4 +63,4 @@ spring:
   data:
     redis:
       host: PROD_URL
-      port: 6380
+      port: 6379

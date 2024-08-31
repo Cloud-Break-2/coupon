@@ -5,6 +5,7 @@ yum update -y
 yum install -y git 
 yum install -y curl
 
+
 ## docker&docker-compose 
 yum install -y docker 
 usermod -a -G docker ec2-user 
@@ -15,12 +16,11 @@ systemctl enable docker
 service docker start
 
 ## docker-compose 
-sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose version
+curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 # JAVA ENV --------------------------------------------
-yum install -y java-17-amazon-corretto-devel
+# yum install -y java-17-amazon-corretto-devel
 
 
 # Version Check ---------------------------------------

@@ -58,5 +58,8 @@ docker buildx use mybuilder
 docker buildx inspect --bootstrap
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
-docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/shop-front:latest --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v1.1 --push .
+
+-- ec2 확인 후에 latest로 변경하기 
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:latest --push .
 

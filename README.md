@@ -1,8 +1,14 @@
+# install.sh 
+```
+chmod +x install.sh
+sudo ./install.sh
+```
+
 # docker-compose 실행 및 확인
 ```
-docker compose up -d --build # 도커 컨테이너 실행 및 빌드 
+docker-compose up -d --build # 도커 컨테이너 실행 및 빌드 
 docker ps -a
-docker compose down # 도커 컨테이너 종료
+docker-compose down # 도커 컨테이너 종료
 ```
 
 # coupon-api 확인
@@ -54,4 +60,10 @@ PONG
 docker inspect <container_id> # 컨테이너 정보 확인
 docker logs -f <container_id> # 컨테이너 로그 확인  
 docker exec -it <container_id> /bin/sh # 컨테이너 접속
+```
+
+mysql-client, redis-tools 설치
+```
+sudo apt-get update
+sudo apt-get install -y mysql-client redis-tools
 ```
