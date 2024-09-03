@@ -30,7 +30,7 @@ docker compose up -d --build
 - 도커 내부로 들어가기
 ```
 > docker exec -it shop-back /bin/bash
-> curl http://shop-back:8080/products?page=0
+> curl http://shop-back:80/products?page=0
 ```
 - mysql 확인 :
 ```

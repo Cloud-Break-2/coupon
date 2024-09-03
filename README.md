@@ -10,6 +10,16 @@ docker-compose up -d --build # 도커 컨테이너 실행 및 빌드
 docker ps -a
 docker-compose down # 도커 컨테이너 종료
 ```
+# coupon-mysql 확인 
+```
+❯ docker exec -it coupon-mysql mysql -u abcd -p
+Enter password: 1234
+mysql> show databases;
+mysql> use coupon;
+mysql> show tables;
+mysql> select * from <테이블명>; 
+// 총 테이블 9개 존재, 데이터도 있는지 확인하기 
+```
 
 # coupon-api 확인
 ``` 
@@ -28,20 +38,24 @@ docker-compose down # 도커 컨테이너 종료
 > redis-cli -h coupon-redis -p 6379
 > ping
 PONG
+
+# 백엔드 통신 확인 
+
+# 프론트 통신 확인 
 ```
 
 # shop-front 확인  
 ```
 > docker exec -it shop-front /bin/sh
-> curl http://shop-back:8080/products?page=0
-> curl http://coupon-api:8080/hello
+> curl http://shop-back:80/products?page=0
+> curl http://coupon-api:80/hello
 ```
 
 # shop-back 확인
 ```
 #도커 내부가서 
 > docker exec -it shop-back /bin/bash
-> curl http://shop-back:8080/products?page=0
+> curl http://shop-back:80/products?page=0
 
 # mysql 확인 :
 > mysql -h coupon-mysql -P 3306 -u abcd -p

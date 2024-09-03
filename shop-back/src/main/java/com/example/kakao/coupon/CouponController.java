@@ -21,7 +21,7 @@ import java.util.Map;
 public class CouponController {
 
     private final RestTemplate client;
-    private final String COUPON_BACKEND_URL = "http://127.0.0.1:8080";
+    private final String COUPON_BACKEND_URL = "http://127.0.0.1:80"; // CHECK
 
     @PostMapping("/v1")
     public ResponseEntity<?> registerCouponV1(@RequestBody CouponRegisterRequest request, @AuthenticationPrincipal CustomUserDetails userDetails) {

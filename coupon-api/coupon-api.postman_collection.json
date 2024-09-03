@@ -21,11 +21,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/v1/issue",
+					"raw": "localhost:80/v1/issue",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "80",
 					"path": [
 						"v1",
 						"issue"
@@ -49,11 +49,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/v2/issue",
+					"raw": "localhost:80/v2/issue",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "80",
 					"path": [
 						"v2",
 						"issue"

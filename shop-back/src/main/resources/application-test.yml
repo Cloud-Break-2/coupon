@@ -3,7 +3,7 @@ server:
     encoding:
       charset: utf-8
       force: true
-  port: 8080
+  port: 80
 spring:
   datasource:
     url: jdbc:h2:mem:test;MODE=MySQL
@@ -15,7 +15,7 @@ spring:
       enabled: true
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:

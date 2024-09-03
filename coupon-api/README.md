@@ -15,8 +15,7 @@
 
 - coupon-api(main) jar 파일 생성 확인 
 ```
-cd ./build/libs
-./coupon-api/build/libs/coupon-api.jar
+경로 jar: /coupon/coupon-api/coupon-api/build/libs/coupon-api.jar 
 ```
 
 # 도커컴포즈 실행 및 확인
@@ -25,7 +24,7 @@ cd ./build/libs
 docker-compose up -d
 ```
 
-방법1. curl <url>:8080/hello ✅ 
+방법1. curl <url>:80/hello ✅ 
 방법2. 도커 내부로 들어가서 디비, 레디스 잘 있는지 확인 ✅
 - 도커 내부로 들어가기 
 ```

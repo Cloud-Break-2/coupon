@@ -506,98 +506,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect3">
 <h4 id="_쿼리_스트링">쿼리 스트링</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">첫 페이지는 0(default: 0)</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-all_test/request-parameters.adoc[]</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_요청_예시">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /products?page=0 HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-all_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : [ {
-    "id" : 1,
-    "productName" : "기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전",
-    "description" : "",
-    "image" : "/images/1.jpg",
-    "price" : 1000
-  }, {
-    "id" : 2,
-    "productName" : "[황금약단밤 골드]2022년산 햇밤 칼집밤700g외/군밤용/생율",
-    "description" : "",
-    "image" : "/images/2.jpg",
-    "price" : 2000
-  }, {
-    "id" : 3,
-    "productName" : "삼성전자 JBL JR310 외 어린이용/성인용 헤드셋 3종!",
-    "description" : "",
-    "image" : "/images/3.jpg",
-    "price" : 30000
-  }, {
-    "id" : 4,
-    "productName" : "바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종",
-    "description" : "",
-    "image" : "/images/4.jpg",
-    "price" : 4000
-  }, {
-    "id" : 5,
-    "productName" : "[더주] 컷팅말랑장족, 숏다리 100g/300g 외 주전부리 모음 /중독성 최고/마른안주",
-    "description" : "",
-    "image" : "/images/5.jpg",
-    "price" : 5000
-  }, {
-    "id" : 6,
-    "productName" : "굳지않는 앙금절편 1,050g 2팩 외 우리쌀떡 모음전",
-    "description" : "",
-    "image" : "/images/6.jpg",
-    "price" : 15900
-  }, {
-    "id" : 7,
-    "productName" : "eoe 이너딜리티 30포, 오렌지맛 고 식이섬유 보충제",
-    "description" : "",
-    "image" : "/images/7.jpg",
-    "price" : 26800
-  }, {
-    "id" : 8,
-    "productName" : "제나벨 PDRN 크림 2개. 피부보습/진정 케어",
-    "description" : "",
-    "image" : "/images/8.jpg",
-    "price" : 25900
-  }, {
-    "id" : 9,
-    "productName" : "플레이스테이션 VR2 호라이즌 번들. 생생한 몰입감",
-    "description" : "",
-    "image" : "/images/9.jpg",
-    "price" : 797000
-  } ],
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-all_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -605,51 +527,14 @@ Host: localhost:8080</code></pre>
 <h3 id="_개별_상품_상세_조회">개별 상품 상세 조회</h3>
 <div class="sect3">
 <h4 id="_요청_예시_2">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /products/1 HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-by-id_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_2">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : {
-    "id" : 1,
-    "productName" : "기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전",
-    "description" : "",
-    "image" : "/images/1.jpg",
-    "price" : 1000,
-    "starCount" : 5,
-    "options" : [ {
-      "id" : 1,
-      "optionName" : "01. 슬라이딩 지퍼백 크리스마스에디션 4종",
-      "price" : 10000
-    }, {
-      "id" : 2,
-      "optionName" : "02. 슬라이딩 지퍼백 플라워에디션 5종",
-      "price" : 10900
-    }, {
-      "id" : 3,
-      "optionName" : "고무장갑 베이지 S(소형) 6팩",
-      "price" : 9900
-    }, {
-      "id" : 4,
-      "optionName" : "뽑아쓰는 키친타올 130매 12팩",
-      "price" : 16900
-    }, {
-      "id" : 5,
-      "optionName" : "2겹 식빵수세미 6매",
-      "price" : 8900
-    } ]
-  },
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-by-id_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -660,26 +545,14 @@ Host: localhost:8080</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_3">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /products/150 HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-by-id_fail_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_3">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "해당 상품을 찾을 수 없습니다:150",
-    "status" : 404
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/product-rest-controller-test/find-by-id_fail_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -692,29 +565,14 @@ Host: localhost:8080</code></pre>
 <h3 id="_이메일_중복_확인">이메일 중복 확인</h3>
 <div class="sect3">
 <h4 id="_요청_예시_4">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /check HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 31
-Host: localhost:8080
-
-{
-  "email" : "test@test.com"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/email_check_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_4">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : null,
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/email_check_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -722,32 +580,14 @@ Host: localhost:8080
 <h3 id="_이메일_중복_확인_이미_존재하는_이메일인_경우">이메일 중복 확인 - 이미 존재하는 이메일인 경우</h3>
 <div class="sect3">
 <h4 id="_요청_예시_5">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /check HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 36
-Host: localhost:8080
-
-{
-  "email" : "ssarmango@nate.com"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/email_check_fail_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_5">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "동일한 이메일이 존재합니다 : ssarmango@nate.com",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/email_check_fail_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -755,31 +595,14 @@ Host: localhost:8080
 <h3 id="_회원가입">회원가입</h3>
 <div class="sect3">
 <h4 id="_요청_예시_6">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /join HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 87
-Host: localhost:8080
-
-{
-  "email" : "test@test.com",
-  "password" : "test1234!",
-  "username" : "test_test"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_6">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : null,
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -787,31 +610,14 @@ Host: localhost:8080
 <h3 id="_회원가입_2">회원가입</h3>
 <div class="sect3">
 <h4 id="_요청_예시_7">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /join HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 87
-Host: localhost:8080
-
-{
-  "email" : "test@test.com",
-  "password" : "test1234!",
-  "username" : "test_test"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_7">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : null,
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -822,19 +628,8 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_8">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /join HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 78
-Host: localhost:8080
-
-{
-  "email" : "test",
-  "password" : "test1234!",
-  "username" : "test_test"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_fail_400_test/http-request.adoc[]</p>
 </div>
 <div class="sect4">
 <h5 id="_email">email</h5>
@@ -872,17 +667,8 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_8">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "이메일 형식으로 작성해주세요:email",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_fail_400_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -890,34 +676,14 @@ Host: localhost:8080
 <h3 id="_회원가입_이미_존재하는_이메일">회원가입 - 이미 존재하는 이메일</h3>
 <div class="sect3">
 <h4 id="_요청_예시_9">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /join HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 92
-Host: localhost:8080
-
-{
-  "email" : "ssarmango@nate.com",
-  "password" : "test1234!",
-  "username" : "test_test"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_fail_exist_email_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_9">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "동일한 이메일이 존재합니다 : ssarmango@nate.com",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/join_fail_exist_email_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -925,44 +691,14 @@ Host: localhost:8080
 <h3 id="_로그인">로그인</h3>
 <div class="sect3">
 <h4 id="_요청_예시_10">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /login HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 64
-Host: localhost:8080
-
-{
-  "email" : "ssarmango@nate.com",
-  "password" : "meta1234!"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/login_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_10">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzc2FybWFuZ29AbmF0ZS5jb20iLCJyb2xlIjoiUk9MRV9VU0VSIiwiaWQiOjEsImV4cCI6MTcyNDgzNjI4Mn0.FnTwiIq2sS6Uayxhh3XGr8bC-FaHxYDUwOvf8ZJvGSFBEIDojvcL0eytTzKhF7hhxBGilt5GMlfbeur5QE5mKQ
-Content-Type: application/json;charset=UTF-8
-X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Pragma: no-cache
-Expires: 0
-X-Frame-Options: SAMEORIGIN
-Content-Length: 61
-
-{
-  "success" : true,
-  "response" : null,
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/login_test/http-response.adoc[]</p>
 </div>
 </div>
 </div>
@@ -970,18 +706,8 @@ Content-Length: 61
 <h3 id="_로그인_올바르지_않은_양식">로그인 - 올바르지 않은 양식</h3>
 <div class="sect3">
 <h4 id="_요청_예시_11">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /login HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 63
-Host: localhost:8080
-
-{
-  "email" : "ssarmango@nate.com",
-  "password" : "meta1234"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/login_fail_400_test/http-request.adoc[]</p>
 </div>
 <div class="sect4">
 <h5 id="_email_2">email</h5>
@@ -1009,17 +735,8 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_11">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "영문, 숫자, 특수문자가 포함되어야하고 공백이 포함될 수 없습니다.:password",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/login_fail_400_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1037,18 +754,8 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_12">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /login HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 65
-Host: localhost:8080
-
-{
-  "email" : "ssarmango@nate.com",
-  "password" : "meta1234!!"
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/login_fail_test/http-request.adoc[]</p>
 </div>
 <div class="sect4">
 <h5 id="_email_3">email</h5>
@@ -1076,17 +783,8 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_12">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "패스워드가 잘못입력되었습니다",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/user-rest-controller-test/login_fail_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1102,30 +800,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_13">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/add HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 42
-Host: localhost:8080
-
-[ {
-  "optionId" : 3,
-  "quantity" : 5
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_13">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : null,
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1136,33 +818,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_14">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/add HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 43
-Host: localhost:8080
-
-[ {
-  "optionId" : 3,
-  "quantity" : -5
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_fail400_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_14">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "수량은 양수여야합니다.:list[0].quantity",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_fail400_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1173,36 +836,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_15">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/add HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 82
-Host: localhost:8080
-
-[ {
-  "optionId" : 3,
-  "quantity" : 5
-}, {
-  "optionId" : 3,
-  "quantity" : 5
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_fail_duplicated_options_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_15">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "동일한 요청이 여러개 들어올 수 없습니다.",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_fail_duplicated_options_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1213,33 +854,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_16">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/add HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 44
-Host: localhost:8080
-
-[ {
-  "optionId" : 100,
-  "quantity" : 5
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_fail_not_found_option_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_16">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "해당 옵션을 찾을 수 없습니다 : 100",
-    "status" : 404
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/add-cart-list_fail_not_found_option_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1247,61 +869,14 @@ Host: localhost:8080
 <h3 id="_장바구니_조회">장바구니 조회</h3>
 <div class="sect3">
 <h4 id="_요청_예시_17">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /carts HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/find-all_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_17">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : {
-    "products" : [ {
-      "id" : 1,
-      "productName" : "기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전",
-      "carts" : [ {
-        "id" : 1,
-        "option" : {
-          "id" : 1,
-          "optionName" : "01. 슬라이딩 지퍼백 크리스마스에디션 4종",
-          "price" : 10000
-        },
-        "quantity" : 5,
-        "price" : 50000
-      }, {
-        "id" : 2,
-        "option" : {
-          "id" : 2,
-          "optionName" : "02. 슬라이딩 지퍼백 플라워에디션 5종",
-          "price" : 10900
-        },
-        "quantity" : 1,
-        "price" : 10900
-      } ]
-    }, {
-      "id" : 4,
-      "productName" : "바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종",
-      "carts" : [ {
-        "id" : 3,
-        "option" : {
-          "id" : 16,
-          "optionName" : "선택02_바른곡물효소누룽지맛 6박스",
-          "price" : 50000
-        },
-        "quantity" : 5,
-        "price" : 250000
-      } ]
-    } ],
-    "totalPrice" : 310900
-  },
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/find-all_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1312,26 +887,14 @@ Host: localhost:8080</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_18">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /carts HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/find-all-not-authorization_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_18">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "인증되지 않았습니다",
-    "status" : 401
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/find-all-not-authorization_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1349,51 +912,14 @@ Host: localhost:8080</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_19">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/update HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 41
-Host: localhost:8080
-
-[ {
-  "cartId" : 1,
-  "quantity" : 10
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_19">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : {
-    "carts" : [ {
-      "cartId" : 1,
-      "optionId" : 1,
-      "optionName" : "01. 슬라이딩 지퍼백 크리스마스에디션 4종",
-      "quantity" : 10,
-      "price" : 100000
-    }, {
-      "cartId" : 2,
-      "optionId" : 2,
-      "optionName" : "02. 슬라이딩 지퍼백 플라워에디션 5종",
-      "quantity" : 1,
-      "price" : 10900
-    }, {
-      "cartId" : 3,
-      "optionId" : 16,
-      "optionName" : "선택02_바른곡물효소누룽지맛 6박스",
-      "quantity" : 5,
-      "price" : 250000
-    } ],
-    "totalPrice" : 360900
-  },
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1404,33 +930,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_20">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/update HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 42
-Host: localhost:8080
-
-[ {
-  "cartId" : 1,
-  "quantity" : -10
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_fail400_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_20">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "수량은 양수여야합니다.:list[0].quantity",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_fail400_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1441,33 +948,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_21">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/update HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 41
-Host: localhost:8080
-
-[ {
-  "cartId" : 1,
-  "quantity" : 10
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_cart_404_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_21">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "사용자의 장바구니가 존재하지 않습니다.",
-    "status" : 404
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_cart_404_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1478,36 +966,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_22">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/update HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 80
-Host: localhost:8080
-
-[ {
-  "cartId" : 1,
-  "quantity" : 10
-}, {
-  "cartId" : 1,
-  "quantity" : 10
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_duplicated_options_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_22">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "동일한 요청이 여러개 들어올 수 없습니다.",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_duplicated_options_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1518,33 +984,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_23">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /carts/update HTTP/1.1
-Content-Type: application/json;charset=UTF-8
-Content-Length: 43
-Host: localhost:8080
-
-[ {
-  "cartId" : 100,
-  "quantity" : 10
-} ]</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_not_found_option_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_23">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "장바구니 번호가 잘못되었습니다.:100",
-    "status" : 400
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/cart-rest-controller-test/update_not_found_option_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1560,48 +1007,14 @@ Host: localhost:8080
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_24">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /orders/save HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/save_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_24">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : {
-    "id" : 2,
-    "products" : [ {
-      "productName" : "기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전",
-      "items" : [ {
-        "id" : 4,
-        "optionName" : "01. 슬라이딩 지퍼백 크리스마스에디션 4종",
-        "quantity" : 5,
-        "price" : 50000
-      }, {
-        "id" : 5,
-        "optionName" : "02. 슬라이딩 지퍼백 플라워에디션 5종",
-        "quantity" : 1,
-        "price" : 10900
-      } ]
-    }, {
-      "productName" : "바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종",
-      "items" : [ {
-        "id" : 6,
-        "optionName" : "선택02_바른곡물효소누룽지맛 6박스",
-        "quantity" : 5,
-        "price" : 250000
-      } ]
-    } ],
-    "totalPrice" : 310900
-  },
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/save_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1612,26 +1025,14 @@ Host: localhost:8080</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_25">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /orders/save HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/save_not_found_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_25">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "사용자의 장바구니가 존재하지 않습니다.",
-    "status" : 404
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/save_not_found_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1639,48 +1040,14 @@ Host: localhost:8080</code></pre>
 <h3 id="_주문_결과_확인">주문 결과 확인</h3>
 <div class="sect3">
 <h4 id="_요청_예시_26">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /orders/1 HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/find_by_id_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_26">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : true,
-  "response" : {
-    "id" : 1,
-    "products" : [ {
-      "productName" : "기본에 슬라이딩 지퍼백 크리스마스/플라워에디션 에디션 외 주방용품 특가전",
-      "items" : [ {
-        "id" : 1,
-        "optionName" : "01. 슬라이딩 지퍼백 크리스마스에디션 4종",
-        "quantity" : 5,
-        "price" : 50000
-      }, {
-        "id" : 2,
-        "optionName" : "02. 슬라이딩 지퍼백 플라워에디션 5종",
-        "quantity" : 1,
-        "price" : 10900
-      } ]
-    }, {
-      "productName" : "바른 누룽지맛 발효효소 2박스 역가수치보장 / 외 7종",
-      "items" : [ {
-        "id" : 3,
-        "optionName" : "선택02_바른곡물효소누룽지맛 6박스",
-        "quantity" : 5,
-        "price" : 250000
-      } ]
-    } ],
-    "totalPrice" : 310900
-  },
-  "error" : null
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/find_by_id_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1688,26 +1055,14 @@ Host: localhost:8080</code></pre>
 <h3 id="_주문_결과_확인_존재_하지_않는_주문_번호">주문 결과 확인 - 존재 하지 않는 주문 번호</h3>
 <div class="sect3">
 <h4 id="_요청_예시_27">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /orders/3 HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/find_by_id_not_found_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_27">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "존재하지 않는 주문입니다.",
-    "status" : 404
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/find_by_id_not_found_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1718,26 +1073,14 @@ Host: localhost:8080</code></pre>
 </div>
 <div class="sect3">
 <h4 id="_요청_예시_28">요청 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /orders/1 HTTP/1.1
-Host: localhost:8080</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/find_by_id_forbidden_test/http-request.adoc[]</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_응답_예시_28">응답 예시</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-none hljs">{
-  "success" : false,
-  "response" : null,
-  "error" : {
-    "message" : "허용되지 않은 접근입니다.",
-    "status" : 403
-  }
-}</code></pre>
-</div>
+<div class="paragraph">
+<p>Unresolved directive in api-docs.adoc - include::./build/generated-snippets/order-rest-controller-test/find_by_id_forbidden_test/response-body.adoc[]</p>
 </div>
 </div>
 </div>
@@ -1747,7 +1090,7 @@ Host: localhost:8080</code></pre>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2024-08-20 22:26:30 +0900
+Last updated 2024-09-03 16:59:48 +0900
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

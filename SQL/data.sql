@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS `user_tb`;
 
 -- 유저 테이블 생성
 CREATE TABLE IF NOT EXISTS `user_tb` (
-                                         `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
     `email` VARCHAR(100) NOT NULL,
     `password` VARCHAR(256) NOT NULL,
     `username` VARCHAR(45) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `user_tb` (
 
 -- 쿠폰 테이블 생성
 CREATE TABLE IF NOT EXISTS `coupons` (
-                                         `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(255) NOT NULL COMMENT '쿠폰명',
     `coupon_type` VARCHAR(255) NOT NULL COMMENT '쿠폰 타입 (선착순 쿠폰 등)',
     `total_quantity` INT NULL COMMENT '쿠폰 발급 최대 수량',
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `coupons` (
 
 -- 쿠폰 발급 내역 테이블 생성
 CREATE TABLE IF NOT EXISTS `coupon_issues` (
-                                               `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+    `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
     `coupon_id` BIGINT(20) NOT NULL COMMENT '쿠폰 ID',
     `user_id` INT(11) NOT NULL COMMENT ' ID',  -- user_id를 INT로 변경
     `date_issued` DATETIME(6) NOT NULL COMMENT '발급 일시',
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `coupon_issues` (
 
 -- 제품 테이블 생성
 CREATE TABLE IF NOT EXISTS `product_tb` (
-                                            `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
     `product_name` VARCHAR(500) NOT NULL,
     `description` VARCHAR(1000) DEFAULT NULL,
     `image` VARCHAR(500) DEFAULT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `product_tb` (
 
 -- 장바구니 테이블 생성
 CREATE TABLE IF NOT EXISTS `cart_tb` (
-                                         `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
     `user_id` INT(11) NOT NULL,
     `option_id` INT(11) NOT NULL,
     `quantity` INT(11) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `cart_tb` (
 
 -- 옵션 테이블 생성
 CREATE TABLE IF NOT EXISTS `option_tb` (
-                                           `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
     `product_id` INT(11) DEFAULT NULL,
     `option_name` VARCHAR(100) NOT NULL,
     `price` INT(11) NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `option_tb` (
 
 -- 주문 테이블 생성
 CREATE TABLE IF NOT EXISTS `order_tb` (
-                                          `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
     `user_id` INT(11) NOT NULL,
     PRIMARY KEY (`id`),
     KEY `order_user_id_idx` (`user_id`),
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `order_tb` (
 
 -- 아이템 테이블 생성
 CREATE TABLE IF NOT EXISTS `item_tb` (
-                                         `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
     `option_id` INT(11) NOT NULL,
     `quantity` INT(11) NOT NULL,
     `price` INT(11) NOT NULL,

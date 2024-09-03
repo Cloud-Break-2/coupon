@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 80
   tomcat:
     mbeanregistry:
       enabled: true
@@ -17,7 +17,7 @@ spring:
       port: 6379
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
 
 management:

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/coupon-api/coupon-version-control.coupon-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/coupon-api/coupon-version-control.coupon-api.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/coupon-consumer/coupon-version-control.coupon-consumer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/coupon-consumer/coupon-version-control.coupon-consumer.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/coupon-core/coupon-version-control.coupon-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/coupon-core/coupon-version-control.coupon-core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kakao.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kakao.main.iml" />
     </modules>
   </component>
 </project>
