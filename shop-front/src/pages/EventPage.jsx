@@ -49,7 +49,7 @@ const EventPage = () => {
 
     if (!token) {
       alert("로그인 후 이용 가능합니다");
-      window.location.href = "/login"; // 로그인 페이지의 경로로 변경하세요
+      // window.location.href = "/login"; // 로그인 페이지의 경로로 변경하세요
     } else {
       try {
         const response = await fetch("http://coupon-api:80/v1/issue", {
