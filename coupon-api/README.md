@@ -24,7 +24,7 @@
 docker-compose up -d
 ```
 
-방법1. curl <url>:80/hello ✅ 
+방법1. curl <url>:8080/hello ✅ 
 방법2. 도커 내부로 들어가서 디비, 레디스 잘 있는지 확인 ✅
 - 도커 내부로 들어가기 
 ```
@@ -52,13 +52,18 @@ PONG
 
 
 # 컨테이너 이미지 빌드
-docker buildx create --use --name mynewbuilder
-docker buildx use mybuilder
+docker buildx create --use --name builder1
+docker buildx use builder1
 docker buildx inspect --bootstrap
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v1.1 --push .
 
+
+# v1.2 EKS url, DATABASE table 적용 
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v1.2 --push .
+
 -- ec2 확인 후에 latest로 변경하기 
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:latest --push .
+
 

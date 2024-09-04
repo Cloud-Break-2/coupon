@@ -8,4 +8,4 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y mysql-client redis-tools
 COPY --from=builder /home/gradle/coupon-api/build/libs/coupon-api.jar /app/coupon-api.jar
 ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=docker", "/app/coupon-api.jar"]
-EXPOSE 80
+EXPOSE 8080
