@@ -31,7 +31,7 @@ mysql> show databases;
 mysql> use coupon;
 mysql> show tables;
 mysql> select * from <테이블명>; 
-// 총 테이블 9개 존재, 데이터도 있는지 확인하기 
+// 총 테이블 8개 존재, 데이터도 있는지 확인하기 
 
 > redis-cli -h coupon-redis -p 6379
 > ping
@@ -53,3 +53,5 @@ mysql-client, redis-tools 설치
 sudo apt-get update
 sudo apt-get install -y mysql-client redis-tools
 ```
+
+--------------

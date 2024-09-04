@@ -25,12 +25,24 @@ npm run build
 ```
 docker buildx create --use --name mynewbuilder
 docker buildx use mybuilder
-docker buildx inspect --bootstrap
-docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+docker run --rm --privileged --platform linux/arm64 multiarch/qemu-user-static --reset -p yes
+
 
 # v2.0 EKS url, DATABASE table 적용
-docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/shop-front:v2.0 --push .
+# v2.1 modify Dockerfile URL localhost -> shop-back:8080
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/shop-front:v2.1 --push .
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/shop-front:latest --push .
 ```
 
+Docker Desktop 설치 및 Buildx 활성화: `docker buildx create --use`로 빌더 생성.
+QEMU 설정: 
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+로 멀티 아키텍처 지원 설정.
+Dockerfile 작성: 표준 Dockerfile 작성.
+멀티 아키텍처 빌드 및 푸시: docker buildx build --platform linux/amd64,linux/arm64 -t <your-image> --push .로 빌드 및 푸시.
+
 -----------------
+
+
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/shop-front:v2.1 --push .

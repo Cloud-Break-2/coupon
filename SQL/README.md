@@ -38,10 +38,35 @@ mysql> select * from <테이블명>;
 
 # 이미지 빌드 
 docker buildx create --use --name mynewbuilder
-docker buildx use mybuilder
+docker buildx use mynewbuilder
 docker buildx inspect --bootstrap
+
+멀티아키텍처 
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
+
+
 # v2.0 EKS url, DATABASE table 적용
+```
+
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-mysql:v2.0 --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-mysql:v2.0 --push .
+
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-mysql:latest --push .
+
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-mysql:v2.0 --push .
+docker manifest inspect cloudbreak6th/coupon-mysql:v2.0
+
+
+--platform
+
+docker buildx rm mybuilder
+docker buildx create --use
+
+
+-- buildx 캐시정리
+docker buildx prune
+
+```
+
+

@@ -13,6 +13,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("com.github.ben-manes.caffeine:caffeine")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // Spring Web 의존성 추가
+    implementation ("org.springframework.boot:spring-boot-starter-web")
 }
 
 //build.gradle 파일에서 테스트 작업을 비활성화

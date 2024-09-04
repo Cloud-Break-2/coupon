@@ -10,7 +10,7 @@ services:
     command: redis-server --port 6379
       
   coupon-mysql:
-    image: cloudbreak6th/coupon-mysql:v2.0
+#    image: cloudbreak6th/coupon-mysql:v2.0
     build:
       context: ./SQL
       dockerfile: Dockerfile
@@ -37,7 +37,7 @@ services:
       start_period: 30s
 
   coupon-api:
-    image: cloudbreak6th/coupon-api:v2.0
+#    image: cloudbreak6th/coupon-api:v2.0
     build:
       context: ./coupon-api
       dockerfile: Dockerfile

@@ -1,4 +1,4 @@
--- 데이터베이스 : coupon / 테이블 총 9개 : coupons, coupon_issues
+-- 데이터베이스 : coupon / 테이블 총 8개 : coupons, coupon_issues
 -- 데이터베이스 스키마 생성
 CREATE SCHEMA IF NOT EXISTS `coupon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `item_tb` (
 
 -- SET FOREIGN_KEY_CHECKS = 1;
 
--- 데이터 삽입
+-- 데이터 삽입 -- 솔트값을 모르므로 1q2w3e4r값 통해서 솔트값 확인 후에 역으로 적용해야할듯
 INSERT INTO `user_tb` (`id`, `email`, `password`, `username`, `roles`)
 VALUES (1, 'admin@mail.com', '{bcrypt}$2a$10$8H0OT8wgtALJkig6fmypi.Y7jzI5Y7W9PGgRKqnVeS2cLWGifwHF2', 'admin', 'ROLE_USER');
 
