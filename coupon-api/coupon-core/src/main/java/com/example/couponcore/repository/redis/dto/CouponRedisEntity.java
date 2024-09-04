@@ -33,7 +33,7 @@ public record CouponRedisEntity(
         this(
                 coupon.getId(),
                 coupon.getCouponType(),
-                coupon.getTotalQuantity().get(),
+                coupon.getTotalQuantity(),
                 coupon.availableIssueQuantity(),
                 coupon.getDateIssueStart(),
                 coupon.getDateIssueEnd()

@@ -5,7 +5,6 @@ import com.example.couponcore.model.CouponType;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 class AsyncCouponIssueServiceV2Test {
@@ -15,13 +14,13 @@ class AsyncCouponIssueServiceV2Test {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(0))  // AtomicInteger로 수정
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(1))
                 .build();
 
-        IntStream.range(0, coupon.getTotalQuantity().get())  // .get()을 사용하여 int 값 가져오기
+        IntStream.range(0, coupon.getTotalQuantity())  // .get()을 사용하여 int 값 가져오기
                 .forEach(idx -> {
                     // 발급 로직 처리
                 });
@@ -32,8 +31,8 @@ class AsyncCouponIssueServiceV2Test {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(0))  // AtomicInteger로 수정
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().plusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
@@ -46,8 +45,8 @@ class AsyncCouponIssueServiceV2Test {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(0))  // AtomicInteger로 수정
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();

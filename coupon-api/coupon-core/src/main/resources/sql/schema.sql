@@ -31,11 +31,11 @@ CREATE TABLE IF NOT EXISTS `user_tb` (
 
 -- 쿠폰 테이블 생성
 CREATE TABLE IF NOT EXISTS `coupons` (
-                                         `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+    `id` INT(20) NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(255) NOT NULL COMMENT '쿠폰명',
     `coupon_type` VARCHAR(255) NOT NULL COMMENT '쿠폰 타입 (선착순 쿠폰 등)',
     `total_quantity` INT NULL COMMENT '쿠폰 발급 최대 수량',
-    `issued_quantity` BIGINT NOT NULL COMMENT '발급된 쿠폰 수량',
+    `issued_quantity` INT NOT NULL COMMENT '발급된 쿠폰 수량',
     `discount_amount` INT NOT NULL COMMENT '할인 금액',
     `min_available_amount` INT NOT NULL COMMENT '최소 사용 금액',
     `date_issue_start` DATETIME(6) NOT NULL COMMENT '발급 시작 일시',
@@ -47,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `coupons` (
 
 -- 쿠폰 발급 내역 테이블 생성
 CREATE TABLE IF NOT EXISTS `coupon_issues` (
-                                               `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-    `coupon_id` BIGINT(20) NOT NULL COMMENT '쿠폰 ID',
+    `id` INT(20) NOT NULL AUTO_INCREMENT,
+    `coupon_id` INT(20) NOT NULL COMMENT '쿠폰 ID',
     `user_id` INT(11) NOT NULL COMMENT ' ID',  -- user_id를 INT로 변경
     `date_issued` DATETIME(6) NOT NULL COMMENT '발급 일시',
     `date_used` DATETIME(6) NULL COMMENT '사용 일시',

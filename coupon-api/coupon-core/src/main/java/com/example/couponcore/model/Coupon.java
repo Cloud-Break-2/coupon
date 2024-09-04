@@ -31,10 +31,10 @@ public class Coupon extends BaseTimeEntity {
     @Enumerated(value = EnumType.STRING)
     private CouponType couponType;
 
-    private AtomicInteger totalQuantity;
+    private Integer totalQuantity;
 
     @Column(nullable = false)
-    private AtomicInteger issuedQuantity;
+    private int issuedQuantity;
 
     @Column(nullable = false)
     private int discountAmount;
@@ -49,7 +49,10 @@ public class Coupon extends BaseTimeEntity {
     private LocalDateTime dateIssueEnd;
 
     public boolean availableIssueQuantity() {
-        return totalQuantity.get() > issuedQuantity.get();
+        if (totalQuantity == null) {
+            return true;
+        }
+        return totalQuantity > issuedQuantity;
     }
 
     public boolean availableIssueDate() {
@@ -69,6 +72,6 @@ public class Coupon extends BaseTimeEntity {
         if (!availableIssueDate()) {
             throw new CouponIssueException(INVALID_COUPON_ISSUE_DATE, "발급 가능한 일자가 아닙니다. request : %s, issueStart: %s, issueEnd: %s".formatted(LocalDateTime.now(), dateIssueStart, dateIssueEnd));
         }
-        issuedQuantity.getAndIncrement();
+        issuedQuantity++;
     }
 }

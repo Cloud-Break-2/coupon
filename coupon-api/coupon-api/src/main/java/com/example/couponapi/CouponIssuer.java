@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 @Slf4j
 @Service
@@ -26,8 +26,8 @@ public class CouponIssuer {
         final Coupon coupon = new Coupon();
         coupon.setTitle("선착순 쿠폰");
         coupon.setCouponType(CouponType.FIRST_COME_FIRST_SERVED);
-        coupon.setTotalQuantity(new AtomicInteger(300));   // 총 쿠폰
-        coupon.setIssuedQuantity(new AtomicInteger(0));    // 발급된 쿠폰
+        coupon.setTotalQuantity(300);   // 총 쿠폰
+        coupon.setIssuedQuantity(0);    // 발급된 쿠폰
         coupon.setDiscountAmount(3000);                                // 할인 금액
         coupon.setMinAvailableAmount(50000);                           // 5만원 이상 사용시 할인 가능
 

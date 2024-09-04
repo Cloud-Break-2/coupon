@@ -17,7 +17,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 import static com.example.couponcore.exception.ErrorCode.*;
@@ -62,13 +61,13 @@ class AsyncCouponIssueServiceV1Test extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // 수정된 부분: AtomicInteger로 래핑
-                .issuedQuantity(new AtomicInteger(0))  // 수정된 부분: AtomicInteger로 래핑
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(1))
                 .build();
         couponJpaRepository.save(coupon);
-        IntStream.range(0, coupon.getTotalQuantity().get()).forEach(idx -> {  // 수정된 부분: get()으로 int 변환
+        IntStream.range(0, coupon.getTotalQuantity()).forEach(idx -> {  // 수정된 부분: get()으로 int 변환
             redisTemplate.opsForSet().add(getIssueRequestKey(coupon.getId()), String.valueOf(idx));
         });
         // when & then
@@ -86,8 +85,8 @@ class AsyncCouponIssueServiceV1Test extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // 수정된 부분: AtomicInteger로 래핑
-                .issuedQuantity(new AtomicInteger(0))  // 수정된 부분: AtomicInteger로 래핑
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(1))
                 .build();
@@ -108,8 +107,8 @@ class AsyncCouponIssueServiceV1Test extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // 수정된 부분: AtomicInteger로 래핑
-                .issuedQuantity(new AtomicInteger(0))  // 수정된 부분: AtomicInteger로 래핑
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().plusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
@@ -130,8 +129,8 @@ class AsyncCouponIssueServiceV1Test extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // 수정된 부분: AtomicInteger로 래핑
-                .issuedQuantity(new AtomicInteger(0))  // 수정된 부분: AtomicInteger로 래핑
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
@@ -151,8 +150,8 @@ class AsyncCouponIssueServiceV1Test extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(10))  // 수정된 부분: AtomicInteger로 래핑
-                .issuedQuantity(new AtomicInteger(0))  // 수정된 부분: AtomicInteger로 래핑
+                .totalQuantity(10)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();

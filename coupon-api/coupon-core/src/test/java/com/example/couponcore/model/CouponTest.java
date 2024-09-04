@@ -6,7 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.example.couponcore.exception.ErrorCode.INVALID_COUPON_ISSUE_DATE;
 import static com.example.couponcore.exception.ErrorCode.INVALID_COUPON_ISSUE_QUANTITY;
@@ -18,8 +17,8 @@ class CouponTest {
     void availableIssueQuantity_1() {
         // given
         Coupon coupon = Coupon.builder()
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(99))
+                .totalQuantity(100)
+                .issuedQuantity(99)
                 .build();
         // when
         boolean result = coupon.availableIssueQuantity();
@@ -32,8 +31,8 @@ class CouponTest {
     void availableIssueQuantity_2() {
         // given
         Coupon coupon = Coupon.builder()
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(100))
+                .totalQuantity(100)
+                .issuedQuantity(100)
                 .build();
         // when
         boolean result = coupon.availableIssueQuantity();
@@ -47,7 +46,7 @@ class CouponTest {
         // given
         Coupon coupon = Coupon.builder()
                 .totalQuantity(null)
-                .issuedQuantity(new AtomicInteger(100))
+                .issuedQuantity(100)
                 .build();
         // when
         boolean result = coupon.availableIssueQuantity();
@@ -102,15 +101,15 @@ class CouponTest {
     void issue_1() {
         // given
         Coupon coupon = Coupon.builder()
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(99))
+                .totalQuantity(100)
+                .issuedQuantity(99)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
         // when
         coupon.issue();
         // then
-        Assertions.assertEquals(coupon.getIssuedQuantity().get(), 100);
+        Assertions.assertEquals(coupon.getIssuedQuantity(), 100);
     }
 
     @Test
@@ -118,8 +117,8 @@ class CouponTest {
     void issue_2() {
         // given
         Coupon coupon = Coupon.builder()
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(100))
+                .totalQuantity(100)
+                .issuedQuantity(100)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
@@ -133,8 +132,8 @@ class CouponTest {
     void issue_3() {
         // given
         Coupon coupon = Coupon.builder()
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(99))
+                .totalQuantity(100)
+                .issuedQuantity(99)
                 .dateIssueStart(LocalDateTime.now().plusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
@@ -150,8 +149,8 @@ class CouponTest {
         Coupon coupon = Coupon.builder()
                 .dateIssueStart(LocalDateTime.now().minusDays(2))
                 .dateIssueEnd(LocalDateTime.now().minusDays(1))
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(0))
+                .totalQuantity(100)
+                .issuedQuantity(0)
                 .build();
         // when
         boolean result = coupon.isIssueComplete();
@@ -164,8 +163,8 @@ class CouponTest {
     void isIssueComplete_2() {
         // given
         Coupon coupon = Coupon.builder()
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(100))
+                .totalQuantity(100)
+                .issuedQuantity(100)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
                 .build();
@@ -182,8 +181,8 @@ class CouponTest {
         Coupon coupon = Coupon.builder()
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(2))
-                .totalQuantity(new AtomicInteger(100))
-                .issuedQuantity(new AtomicInteger(0))
+                .totalQuantity(100)
+                .issuedQuantity(0)
                 .build();
         // when
         boolean result = coupon.isIssueComplete();

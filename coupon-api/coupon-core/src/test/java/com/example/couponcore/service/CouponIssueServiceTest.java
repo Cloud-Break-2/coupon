@@ -16,7 +16,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.example.couponcore.exception.ErrorCode.*;
 
@@ -76,8 +75,8 @@ class CouponIssueServiceTest extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(100))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(0))   // AtomicInteger로 수정
+                .totalQuantity(100)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(1))
                 .build();
@@ -86,7 +85,7 @@ class CouponIssueServiceTest extends TestConfig {
         sut.issue(coupon.getId(), userId);
         // then
         Coupon couponResult = couponJpaRepository.findById(coupon.getId()).get();
-        Assertions.assertEquals(couponResult.getIssuedQuantity().get(), 1);  // get() 사용하여 int 값 가져오기
+        Assertions.assertEquals(couponResult.getIssuedQuantity(), 1);
 
         CouponIssue couponIssueResult = couponIssueRepository.findFirstCouponIssue(coupon.getId(), userId);
         Assertions.assertNotNull(couponIssueResult);
@@ -101,8 +100,8 @@ class CouponIssueServiceTest extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(100))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(100)) // AtomicInteger로 수정
+                .totalQuantity(100)
+                .issuedQuantity(100)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(1))
                 .build();
@@ -122,8 +121,8 @@ class CouponIssueServiceTest extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(100))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(0))   // AtomicInteger로 수정
+                .totalQuantity(100)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(2))
                 .dateIssueEnd(LocalDateTime.now().minusDays(1))
                 .build();
@@ -143,8 +142,8 @@ class CouponIssueServiceTest extends TestConfig {
         Coupon coupon = Coupon.builder()
                 .couponType(CouponType.FIRST_COME_FIRST_SERVED)
                 .title("선착순 테스트 쿠폰")
-                .totalQuantity(new AtomicInteger(100))  // AtomicInteger로 수정
-                .issuedQuantity(new AtomicInteger(0))   // AtomicInteger로 수정
+                .totalQuantity(100)
+                .issuedQuantity(0)
                 .dateIssueStart(LocalDateTime.now().minusDays(1))
                 .dateIssueEnd(LocalDateTime.now().plusDays(1))
                 .build();
