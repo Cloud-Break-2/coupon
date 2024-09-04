@@ -11,10 +11,20 @@ docker ps -a
 docker-compose down # 도커 컨테이너 종료
 ```
 
+# 백엔드 통신 확인 확인완료 ✅ 프론트 -> 백엔드
+``` 
+> dcoerk exec -it shop-front /bin/sh 
+> curl http://shop-back:8080/products?page=0 
+> curl http://coupon-api:8080/hello  
+> curl -X POST "http://coupon-api:8080/v1/issue?userID=1&couponId=1" -H "Content-Type: application/json" -d '{}' 
+```
+
 # MySQL 및 redis 확인 ✅ 백엔드 -> 디비 
 ```
-❯ docker exec -it coupon-mysql mysql -u abcd -p  // 방법1. mysql 직접접속
-❯ docker exec -it <컨테이너명> /bin/bash // 방법2. 컨테이너 내부로 들어가서 mysql 접속 
+❯ docker exec -it shop-back /bin/bash
+❯ docker exec -it coupon-api /bin/bash
+
+(공통확인)
 mysql -h coupon-mysql -P 3306 -u abcd -p
 Enter password: 1234
 mysql> show databases;
@@ -28,13 +38,7 @@ mysql> select * from <테이블명>;
 PONG
 ```
 
-# 백엔드 통신 확인 확인완료 ✅ 프론트 -> 백엔드 
-``` 
-> curl http://shop-back:8080/products?page=0 
-> curl http://coupon-api:8080/hello  
-> curl -X POST "http://coupon-api:8080/v1/issue?userID=1&couponId=1" -H "Content-Type: application/json" -d '{}' 
 
-```
 
 ----
 # [부록]도커 관련 기본 명령어

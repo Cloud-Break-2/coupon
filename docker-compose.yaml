@@ -10,8 +10,7 @@ services:
     command: redis-server --port 6379
       
   coupon-mysql:
-#    image: cloudbreak6th/coupon-mysql:v1.0
-    image: coupon-mysql
+    image: cloudbreak6th/coupon-mysql:v2.0
     build:
       context: ./SQL
       dockerfile: Dockerfile
@@ -38,8 +37,7 @@ services:
       start_period: 30s
 
   coupon-api:
-#    image: cloudbreak6th/coupon-api:v1.1
-    image: coupon-api
+    image: cloudbreak6th/coupon-api:v2.0
     build:
       context: ./coupon-api
       dockerfile: Dockerfile
@@ -47,7 +45,7 @@ services:
     networks:
       - coupon-network
     ports:
-      -  "80"
+      -  "8080"
     depends_on:
       - coupon-mysql
       - coupon-redis
@@ -61,8 +59,7 @@ services:
         - SPRING_DATA_REDIS_PORT=6379
 
   shop-back:
-#    image: cloudbreak6th/shop-back:v1.0
-    image: shop-back
+    image: cloudbreak6th/shop-back:v2.0
     build:
       context: ./shop-back
       dockerfile: Dockerfile
@@ -70,7 +67,7 @@ services:
     networks:
       - coupon-network
     ports:
-      -  "80"
+      -  "8080"
     depends_on:
       coupon-mysql:
         condition: service_healthy
@@ -78,8 +75,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
 
   shop-front:
-#    image: cloudbreak6th/shop-front:v1.0
-    image: shop-front
+#    image: cloudbreak6th/shop-front:v2.0
     build:
       context: ./shop-front
       dockerfile: Dockerfile

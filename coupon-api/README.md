@@ -60,8 +60,8 @@ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v1.1 --push .
 
 
-# v1.2 EKS url, DATABASE table 적용 
-docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v1.2 --push .
+# v2.0 EKS url, DATABASE table 적용 
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v2.0 --push .
 
 -- ec2 확인 후에 latest로 변경하기 
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:latest --push .
