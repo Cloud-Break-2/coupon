@@ -52,6 +52,7 @@ PONG
 
 
 # 컨테이너 이미지 빌드
+````
 docker buildx create --use --name builder1
 docker buildx use builder1
 docker buildx inspect --bootstrap
@@ -61,9 +62,11 @@ docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-a
 
 
 # v2.0 EKS url, DATABASE table 적용 
-docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v2.0 --push .
+# v2.1 CORS 적용 
+docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:v2.1 --push .
+
 
 -- ec2 확인 후에 latest로 변경하기 
 docker buildx build --platform linux/amd64,linux/arm64 -t cloudbreak6th/coupon-api:latest --push .
 
-
+````
