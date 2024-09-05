@@ -124,7 +124,9 @@ CREATE TABLE IF NOT EXISTS `item_tb` (
 INSERT INTO user_tb (email, password, username, roles)
 VALUES ('cloudbreak@mail.com', '{bcrypt}$2a$10$cqnXrXnXY128eA6cZbEA.uep.OHPteHElepW0AS4eH5R9B1XfTFAC', 'cloudbreak', 'ROLE_USER');
 
->>>>>>> e1a398d (20240905)
+INSERT INTO user_tb (email, password, username, roles)
+VALUES ('test@mail.com', '{bcrypt}$2a$10$cqnXrXnXY128eA6cZbEA.uep.OHPteHElepW0AS4eH5R9B1XfTFAC', 'test', 'ROLE_USER');
+
 
 -- ALTER TABLE product_tb MODIFY product_name VARCHAR(500);
 INSERT INTO `product_tb` (`id`, `product_name`, `description`, `image`, `price`)
