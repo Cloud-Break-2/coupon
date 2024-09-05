@@ -6,9 +6,17 @@ sudo ./install.sh
 
 # docker-compose 실행 및 확인
 ```
+<<<<<<< HEAD
 docker-compose up -d --build # 도커 컨테이너 실행 및 빌드 
 docker ps -a
 docker-compose down # 도커 컨테이너 종료
+=======
+docker login 
+docker-compose up -d --build # 도커 컨테이너 실행 및 빌드 
+docker ps -a
+docker-compose down # 도커 컨테이너 종료
+docker-compose push
+>>>>>>> e1a398d (20240905)
 ```
 
 # 백엔드 통신 확인 확인완료 ✅ 프론트 -> 백엔드

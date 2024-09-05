@@ -10,7 +10,11 @@ const ProductCard = ({ product }) => {
         <Photo
           className={"product-card-photo"}
           alt={product.productName}
+<<<<<<< HEAD
           src={`${process.env.REACT_APP_API_URL}${product.image}`}
+=======
+          src={`${process.env.REACT_APP_API_PATH}${product.image}`}
+>>>>>>> e1a398d (20240905)
           // 크램폴린 배포 서버에서 이미지를 제공해 주지않아 public 이미지를 이용하도록 수정
           // src={`${product.image}`} // 크램폴린 배포용 src
         />
