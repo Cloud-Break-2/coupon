@@ -10,7 +10,7 @@ services:
     command: redis-server --port 6379
       
   coupon-mysql:
-#    image: cloudbreak6th/coupon-mysql:v2.0
+    image: cloudbreak6th/coupon-mysql:v2.0
     build:
       context: ./SQL
       dockerfile: Dockerfile
@@ -37,7 +37,7 @@ services:
       start_period: 30s
 
   coupon-api:
-#    image: cloudbreak6th/coupon-api:v2.0
+    image: cloudbreak6th/coupon-api:v2.0
     build:
       context: ./coupon-api
       dockerfile: Dockerfile
@@ -75,7 +75,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
 
   shop-front:
-#    image: cloudbreak6th/shop-front:v2.0
+    image: cloudbreak6th/shop-front:backALB
     build:
       context: ./shop-front
       dockerfile: Dockerfile
@@ -87,10 +87,28 @@ services:
     depends_on:
       - shop-back
 
+
+#  locust-master:
+#    image: locustio/locust
+#    ports:
+#      - "8089:8089"
+#    volumes:
+#      - ./monitoring-load-test:/mnt/locust
+#    #    command: -f /mnt/locust/locustfile-issue-asyncV2.py --master -H http://host.docker.internal:8080
+#    command: -f /mnt/locust/locustfile-hello.py --master -H http://host.docker.internal:8080
+#
+#  locust-worker:
+#    image: locustio/locust
+#    volumes:
+#      - ./monitoring-load-test:/mnt/locust
+#    #    command: -f /mnt/locust/locustfile-issue-asyncV2.py --worker --master-host master
+#    command: -f /mnt/locust/locustfile-issue-hello.py --worker --master-host master
+
+
+
 networks:
   coupon-network:
     driver: bridge
-
 volumes:
   mysql-data:
     driver: local
