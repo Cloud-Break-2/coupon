@@ -119,11 +119,12 @@ CREATE TABLE IF NOT EXISTS `item_tb` (
 
 -- SET FOREIGN_KEY_CHECKS = 1;
 
--- 데이터 삽입 -- 솔트값을 모르므로 1q2w3e4r값 통해서 솔트값 확인 후에 역으로 적용해야할듯 / cloudbreak@mail.com / 1q2w3e4r!!
-INSERT INTO `user_tb` (`id`, `email`, `password`, `username`, `roles`)
-VALUES (1, 'admin@mail.com', '{bcrypt}$2a$10$8H0OT8wgtALJkig6fmypi.Y7jzI5Y7W9PGgRKqnVeS2cLWGifwHF2', 'admin', 'ROLE_USER');
+-- 데이터 삽입 -- 솔트값을 모르므로 1q2w3e4r값 통해서 솔트값 확인 후에 역으로 적용해야할듯
+-- cloudbreak@mail.com / 1q2w3e4r!!
 INSERT INTO user_tb (email, password, username, roles)
 VALUES ('cloudbreak@mail.com', '{bcrypt}$2a$10$cqnXrXnXY128eA6cZbEA.uep.OHPteHElepW0AS4eH5R9B1XfTFAC', 'cloudbreak', 'ROLE_USER');
+
+>>>>>>> e1a398d (20240905)
 
 -- ALTER TABLE product_tb MODIFY product_name VARCHAR(500);
 INSERT INTO `product_tb` (`id`, `product_name`, `description`, `image`, `price`)

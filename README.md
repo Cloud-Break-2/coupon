@@ -9,6 +9,11 @@ sudo ./install.sh
 docker-compose up -d --build # 도커 컨테이너 실행 및 빌드 
 docker ps -a
 docker-compose down # 도커 컨테이너 종료
+docker login 
+docker-compose up -d --build # 도커 컨테이너 실행 및 빌드 
+docker ps -a
+docker-compose down # 도커 컨테이너 종료
+docker-compose push
 ```
 
 # 백엔드 통신 확인 확인완료 ✅ 프론트 -> 백엔드
@@ -38,8 +43,6 @@ mysql> select * from <테이블명>;
 PONG
 ```
 
-
-
 ----
 # [부록]도커 관련 기본 명령어
 ```
@@ -48,7 +51,7 @@ docker inspect <container_id> # 컨테이너 정보 확인
 docker logs -f <container_id> # 컨테이너 로그 확인  
 ```
 
-mysql-client, redis-tools 설치
+# mysql-client, redis-tools 설치
 ```
 sudo apt-get update
 sudo apt-get install -y mysql-client redis-tools

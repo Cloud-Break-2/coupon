@@ -52,7 +52,7 @@ const EventPage = () => {
       // window.location.href = "/login"; // 로그인 페이지의 경로로 변경하세요
     } else {
       try {
-        const response = await fetch(`${process.env.REACT_APP_COUPON_URL}/v1/issue`, {
+        const response = await fetch("${REACT_APP_API_COUPON_URL}/v1/issue", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

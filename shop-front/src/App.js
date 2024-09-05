@@ -11,7 +11,7 @@ import RequiredAuthLayout from "./layouts/RequiredAuthLayout";
 import OrderCompletePage from "./pages/OrderCompletePage";
 import EventPage from "./pages/EventPage";
 
-const staticServerUri = process.env.REACT_APP_PATH || "";
+const staticServerUri = process.env.REACT_APP_PATH || ""; // CHECK
 
 function App() {
   return (
