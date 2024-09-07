@@ -14,5 +14,6 @@ npm run build
 > docker exec -it shop-front /bin/sh
 > curl http://shop-back:80/products?page=0 
 > curl http://coupon-api:80/hello
+> curl -X POST "http://coupon-api:8080/v1/issue?userID=1&couponId=1" -H "Content-Type: application/json" -d '{}'
 ```
 
