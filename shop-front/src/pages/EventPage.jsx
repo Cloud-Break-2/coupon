@@ -46,13 +46,14 @@ const EventPage = () => {
   async function handleButtonClick(couponId) {
     const token = getCookieValue("token");
     const userId = 1; // 예시로 하드코딩된 사용자 ID. 실제로는 로그인된 사용자 ID를 사용해야 합니다.
+    const API_URL = process.env.REACT_APP_API_COUPON_URL;
 
     if (!token) {
       alert("로그인 후 이용 가능합니다");
       // window.location.href = "/login"; // 로그인 페이지의 경로로 변경하세요
     } else {
       try {
-        const response = await fetch("${REACT_APP_API_COUPON_URL}/v1/issue", {
+        const response = await fetch(`${API_URL}/v1/issue`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
