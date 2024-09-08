@@ -52,7 +52,7 @@ const EventPage = () => {
       hash = (hash << 5) - hash + char;
       hash |= 0; // 32bit 정수로 변환
     }
-    console.log("Hashed email (userId):", hash); // hash 로그 출력
+    // console.log("Hashed email (userId):", hash); // hash 로그 출력
     return Math.abs(hash); // 음수 방지를 위해 절댓값 사용
   }
 
@@ -62,18 +62,13 @@ const EventPage = () => {
     const token = getCookieValue("token");
     const email = getCookieValue("email");
 
-    couponId = 1 // 지금은 임시로 고정
-
-    // console.log("Token from cookie:", token); // token 로그 출력
-    // console.log("Email from cookie:", decodeURIComponent(email)); // email 로그 출력
-
-    if (!token||!email) {
+    if (!token || !email) {
       alert("로그인 후 이용 가능합니다");
       return;
     }
 
     const userId = emailToUserId(decodeURIComponent(email)); // email을 userId로 변환
-    // console.log("User ID:", userId, "type: ", typeof(userId)); // userId 로그 출력, 형태 확인
+    console.log("User ID:", userId, "type: ", typeof(userId)); // userId 로그 출력, 형태 확인
 
     try {
       // 쿠폰 발급 요청
@@ -92,8 +87,14 @@ const EventPage = () => {
         throw new Error("네트워크 응답이 올바르지 않습니다.");
       }
 
-      const data = await response.json();
-      alert(`네고왕 X 카카오쇼핑 ${coupons.find(coupon => coupon.id === couponId).amount}원 쿠폰이 발급되었습니다.`);
+      const data = await response.json(); // 응답 데이터를 JSON으로 파싱
+      console.log("Response data:", data); // 응답 데이터 로그
+      // 성공 여부에 따라 처리
+      if (data.isSuccess) {
+        alert(`네고왕 X 카카오쇼핑 ${coupons.find(coupon => coupon.id === couponId).amount}원 쿠폰이 발급되었습니다.`);
+      } else {
+        alert(`쿠폰 발급 실패: ${data.comment}`);
+      }
     } catch (error) {
       alert(`쿠폰 발급에 실패했습니다: ${error.message}`);
     }
