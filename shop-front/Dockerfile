@@ -8,7 +8,7 @@ COPY package.json package-lock.json ./
 
 # env.prod 환경 : 백엔드 API 서버 주소 - shop-back ALB endpoint
 ENV REACT_APP_API_PATH=http://k8s-default-shopback-c8447eb4cd-128335560.ap-northeast-2.elb.amazonaws.com
-ENV REACT_APP_API_COUPON_URL=http://k8s-default-couponap-acba0908a2-2018995402.ap-northeast-2.elb.amazonaws.com
+ENV REACT_APP_API_COUPON_URL=http://k8s-default-couponap-acba0908a2-1422117942.ap-northeast-2.elb.amazonaws.com
 
 RUN npm ci
 COPY . .
