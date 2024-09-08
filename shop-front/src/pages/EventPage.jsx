@@ -36,43 +36,66 @@ const EventPage = () => {
     { id: 4, amount: 1000, minPurchase: 10000, expiry: "2024.09.20" },
   ];
 
+  // 쿠키에서 특정 값을 가져오는 함수
   function getCookieValue(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
+    if (parts.length === 2) return parts.pop().split(';').shift();
     return null;
   }
 
+  // 이메일을 userId로 변환하는 함수
+  function emailToUserId(email) {
+    let hash = 0;
+    for (let i = 0; i < email.length; i++) {
+      const char = email.charCodeAt(i);
+      hash = (hash << 5) - hash + char;
+      hash |= 0; // 32bit 정수로 변환
+    }
+    console.log("Hashed email (userId):", hash); // hash 로그 출력
+    return Math.abs(hash); // 음수 방지를 위해 절댓값 사용
+  }
+
+  // 쿠폰버튼 클릭 시 실행
   async function handleButtonClick(couponId) {
-    const token = getCookieValue("token");
-    const userId = 1; // 예시로 하드코딩된 사용자 ID. 실제로는 로그인된 사용자 ID를 사용해야 합니다.
     const API_URL = process.env.REACT_APP_API_COUPON_URL;
+    const token = getCookieValue("token");
+    const email = getCookieValue("email");
 
-    if (!token) {
+    couponId = 1 // 지금은 임시로 고정
+
+    // console.log("Token from cookie:", token); // token 로그 출력
+    // console.log("Email from cookie:", decodeURIComponent(email)); // email 로그 출력
+
+    if (!token||!email) {
       alert("로그인 후 이용 가능합니다");
-      // window.location.href = "/login"; // 로그인 페이지의 경로로 변경하세요
-    } else {
-      try {
-        const response = await fetch(`${API_URL}/v1/issue`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId: userId, // 사용자 ID
-            couponId: couponId, // 클릭한 쿠폰 ID
-          }),
-        });
+      return;
+    }
 
-        if (!response.ok) {
-          throw new Error("네트워크 응답이 올바르지 않습니다.");
-        }
+    const userId = emailToUserId(decodeURIComponent(email)); // email을 userId로 변환
+    // console.log("User ID:", userId, "type: ", typeof(userId)); // userId 로그 출력, 형태 확인
 
-        const data = await response.json();
-        alert(`네고왕 X 카카오쇼핑 ${data.amount}원 쿠폰이 발급되었습니다.`);
-      } catch (error) {
-        alert(`쿠폰 발급에 실패했습니다: ${error.message}`);
+    try {
+      // 쿠폰 발급 요청
+      const response = await fetch(`${API_URL}/v1/issue`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId,     // 변환된 사용자 ID
+          couponId,   // 클릭한 쿠폰 ID
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("네트워크 응답이 올바르지 않습니다.");
       }
+
+      const data = await response.json();
+      alert(`네고왕 X 카카오쇼핑 ${coupons.find(coupon => coupon.id === couponId).amount}원 쿠폰이 발급되었습니다.`);
+    } catch (error) {
+      alert(`쿠폰 발급에 실패했습니다: ${error.message}`);
     }
   }
 
@@ -88,7 +111,8 @@ const EventPage = () => {
                 <div
                     key={coupon.id}
                     onClick={() => handleButtonClick(coupon.id)}
-                    className="items">
+                    className="items"
+                >
                   <div className="items-main">
                     <div className="coupon-image">
                       <img src={couponImage} alt="네고왕" />
@@ -112,7 +136,8 @@ const EventPage = () => {
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen></iframe>
+              allowFullScreen
+          ></iframe>
         </div>
         {saleImages.map((image, index) => (
             <div key={index} className="imagewrapper">
